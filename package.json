@@ -4,5 +4,9 @@
   "main": "index.js",
   "author": "Sean Stephenson <Sean.M.Stephenson@espn.com> (http://espn.com/)",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "lodash": "^4.17.20"
+  }
 }
