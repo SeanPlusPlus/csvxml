@@ -1,0 +1,18 @@
+<Person>
+  <Name>John</Name>
+  <Surname>Snow</Surname>
+  <Age>26</Age>
+  <Gender>M</Gender>
+</Person>
+<Person>
+  <Name>Clair</Name>
+  <Surname>White</Surname>
+  <Age>33</Age>
+  <Gender>F</Gender>
+</Person>
+<Person>
+  <Name>Fancy</Name>
+  <Surname>Brown</Surname>
+  <Age>78</Age>
+  <Gender>F</Gender>
+</Person>

@@ -3,20 +3,19 @@ const _ = require('lodash');
 const fs = require('fs');
 const grid = [];
 const root = 'Person';
+const f = './data.xml';
 
 fs.createReadStream('data.csv')
   .pipe(csvparser())
   .on('data', (row) => {
-    console.log(row);
-    
     const el = _.keys(row).map((k) => (
       '  <' + k + '>' + row[k] + '</' + k + '>'
     )).join('\n');
-    console.log(el);
-    
     grid.push('<' + root + '>\n' + el + '\n</' + root +'>\n')
   })
   .on('end', () => {
-    console.log('\n');
-    console.log(grid.join(''));
+    const str = grid.join('');
+    fs.writeFile(f, str, function (err) {
+      if (err) return console.log(err);
+    });
   });
