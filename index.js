@@ -3,9 +3,10 @@ const _ = require('lodash');
 const fs = require('fs');
 const grid = [];
 const root = 'Person';
-const f = './data.xml';
+const csv = './data.csv';
+const xml = './data.xml';
 
-fs.createReadStream('data.csv')
+fs.createReadStream(csv)
   .pipe(csvparser())
   .on('data', (row) => {
     const el = _.keys(row).map((k) => (
@@ -15,7 +16,7 @@ fs.createReadStream('data.csv')
   })
   .on('end', () => {
     const str = grid.join('');
-    fs.writeFile(f, str, function (err) {
+    fs.writeFile(xml, str, function (err) {
       if (err) return console.log(err);
     });
   });
